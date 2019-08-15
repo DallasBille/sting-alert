@@ -1,12 +1,15 @@
 import React from 'react';
 import MapContainer from './Containers/MapContainer'
 import './App.css';
+import './style.css'
 
 class App extends React.Component {
     render(){
       return (
         <div className="App">
-          <h1>Sting Alert!!!</h1>
+            <div className="header">
+                <p className="header-text">Mapbox Demo</p>
+            </div>
           <MapContainer/>
         </div>
       );
