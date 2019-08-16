@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import MapContainer from './Containers/MapContainer'
 import './App.css';
+import './style.css'
 
-function App() {
-  return (
-    <div className="App">
-
-      <h1>Sting Alert!!!</h1>
-    </div>
-  );
+class App extends React.Component {
+    render(){
+      return (
+        <div className="App">
+            <div className="header">
+                <p className="header-text">Mapbox Demo</p>
+            </div>
+          <MapContainer/>
+        </div>
+      );
+    }
 }
 
 export default App;

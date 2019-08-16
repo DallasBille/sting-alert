@@ -4,24 +4,44 @@ import ReactMapGL from 'react-map-gl'
 class MapContainer extends React.Component {
     state = {
     viewport: {
-      width: 400,
-      height: 400,
-      latitude: 37.7577,
-      longitude: -122.4376,
-      zoom: 8
+      width: "100vw",
+      height: "85vh",
+      latitude: 41.724715,
+      longitude: -74.954948,
+      zoom: 5
     }
   };
 
+componentDidMount(){
+    this.getLocation()
+}
+
+
+  getLocation = () => {
+       navigator.geolocation.getCurrentPosition(position => {
+           const viewportCopy = {
+                   width: this.state.viewport.width,
+                   height: this.state.viewport.height,
+                   latitude: position.coords.latitude,
+                   longitude: position.coords.longitude,
+                   zoom: 12
+               }
+               // console.log(viewportCopy);
+           this.setState({
+               viewport: viewportCopy
+           })
+      })
+  }
+
     render(){
 
+        console.log(this.state.viewport);
         return(
             <div>
             <ReactMapGL
-    {...this.state.viewport}
-    
-    onViewportChange={(viewport) => this.setState({viewport})}
-  >Markers Here</ReactMapGL>
-
+        {...this.state.viewport}  mapStyle='mapbox://styles/mapbox/streets-v11'
+        onViewportChange={(viewport) => this.setState({viewport})} mapboxApiAccessToken={process.env.REACT_APP_STINGALERT_TOKEN}
+      >Markers Here</ReactMapGL>
             </div>
         )
     }
