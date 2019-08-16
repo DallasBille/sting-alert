@@ -13,11 +13,12 @@ class MapContainer extends React.Component {
   };
 
     render(){
-        console.log(ReactMapGL);
+
         return(
             <div>
             <ReactMapGL
     {...this.state.viewport}
+    
     onViewportChange={(viewport) => this.setState({viewport})}
   >Markers Here</ReactMapGL>
 
