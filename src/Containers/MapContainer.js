@@ -33,8 +33,8 @@ componentDidMount(){
       })
   }
 
-  // <button onClick={this.getLocation}>Use Location</button>
     render(){
+
         console.log(this.state.viewport);
         return(
             <div>
