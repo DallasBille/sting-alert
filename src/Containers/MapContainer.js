@@ -26,7 +26,6 @@ componentDidMount(){
                    longitude: position.coords.longitude,
                    zoom: 12
                }
-               // console.log(viewportCopy);
            this.setState({
                viewport: viewportCopy
            })
