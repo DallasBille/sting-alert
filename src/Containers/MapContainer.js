@@ -19,6 +19,7 @@ componentDidMount(){
 
   getLocation = () => {
        navigator.geolocation.getCurrentPosition(position => {
+           console.log(position)
            const viewportCopy = {
                    width: this.state.viewport.width,
                    height: this.state.viewport.height,
@@ -33,8 +34,6 @@ componentDidMount(){
   }
 
     render(){
-
-        console.log(this.state.viewport);
         return(
             <div>
             <ReactMapGL
